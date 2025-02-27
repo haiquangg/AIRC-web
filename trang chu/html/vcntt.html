@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>River Vision</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <link rel="stylesheet" href="/trang chu/css/main.css">
@@ -12,20 +13,19 @@
     <!-- Header -->
     <header class="header">
         <div class="logo-container">
-            <img src="/trang chu/images/logo.jpg" alt="Logo AIRC" class="logo">
+            <img src="/trang chu/images/logo.jpg" alt="Logo River Vision" class="logo">
             <span class="brand-name">River Vision</span>
         </div>
         
         <nav>
             <ul class="nav-links">
-                <li><a href="#">Trang Chủ</a></li>
-                <li><a href="#">Giới Thiệu</a></li>
-                <li><a href="#">Đào tạo</a></li>
-                <li><a href="#">Công Nghệ</a></li>
-                <li><a href="#">Thư Viện</a></li>
+                <li><a href="#"><i class="fas fa-home"></i> Trang Chủ</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> Giới Thiệu</a></li>
+                <li><a href="#"><i class="fas fa-graduation-cap"></i> Đào tạo</a></li>
+                <li><a href="#"><i class="fas fa-laptop-code"></i> Công Nghệ</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> Thư Viện</a></li>
             </ul>
         </nav>
-
     </header>
     
     <!-- Main container -->
@@ -35,24 +35,29 @@
             <div class="menu-title">MENU</div>
             
             <ul class="menu-items">
-                
                 <li class="menu-item">
                     <a href="/knee/knee/templates/pages_base/index.html" target="_blank">
+                        <i class="fas fa-chart-line"></i>
                         <span>Trang 1</span>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="/Prediction/Prediction/templates/index.html" target="_blank">
+                        <i class="fas fa-brain"></i>
                         <span>Trang 2</span>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="/Summarization/templates/index.html" target="_blank">
+                        <i class="fas fa-file-alt"></i>
                         <span>Trang 3</span>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <span>Trang 4</span>
+                    <a href="#">
+                        <i class="fas fa-database"></i>
+                        <span>Trang 4</span>
+                    </a>
                 </li>
             </ul>
         </aside>
@@ -60,10 +65,9 @@
         <!-- Main content -->
         <main class="main-content">
             <div class="slider">
-                <img class="slider-img" src="/trang chu/images/slick2.jpg" alt="">
-                <img class="slider-img" src="/trang chu/images/slick3.jpg" alt="">
-                <img class="slider-img" src="/trang chu/images/slick4.jpg" alt="">
-                </div>
+                <div><img class="slider-img" src="/trang chu/images/slick2.jpg" alt="Hình ảnh 1"></div>
+                <div><img class="slider-img" src="/trang chu/images/slick3.jpg" alt="Hình ảnh 2"></div>
+                <div><img class="slider-img" src="/trang chu/images/slick4.jpg" alt="Hình ảnh 3"></div>
             </div>
         </main>
     </div>
@@ -76,30 +80,57 @@
                 <p class="address"><strong>Địa chỉ:</strong> E3, 144 Xuân Thủy, Cầu Giấy, Hà Nội</p>
                 <p class="phone"><strong>Số điện thoại:</strong> (024) 3754 7347</p>
                 <p class="email"><strong>Email:</strong> <a href="mailto:iti@vnu.edu.vn">iti@vnu.edu.vn</a></p>
+                
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
+            
             <div class="footer-links">
+                <h3>Liên kết nhanh</h3>
                 <ul>
                     <li><a href="#">Tài nguyên số</a></li>
                     <li><a href="#">Thư viện</a></li>
                     <li><a href="#">Tiện ích dành riêng cán bộ</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
                 </ul>
             </div>
         </div>
     </footer>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $('.slider').slick({
-            dots: true,
-            arrows: true,
-            autoplay: true,
-            autoplaySpeed: 5000,
-            fade: true,
-            speed: 1000,
-            pauseOnHover: false
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                dots: true,
+                arrows: true,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                fade: true,
+                speed: 1000,
+                pauseOnHover: false,
+                cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false
+                        }
+                    }
+                ]
+            });
+            
+            // Highlight active menu item
+            $('.menu-item a').on('click', function(){
+                $('.menu-item a').removeClass('active');
+                $(this).addClass('active');
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
