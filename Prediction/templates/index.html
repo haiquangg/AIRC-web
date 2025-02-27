@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>River Vision</title>
+    <link href="../static/styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/" rel="preconnect" />
+    <link
+      href="https://fonts.gstatic.com/"
+      rel="preconnect"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      WebFont.load({ google: { families: ["Inter:regular,500,700,800"] } });
+    </script>
+  </head>
+  <body>
+    <div style="opacity: 1" class="page-wrapper">
+      <div class="header-wrapper w-nav">
+        <div class="container-default w-container">
+          <div class="header-content-wrapper">
+            <img 
+              src="../static/logo_airc/logo_airc.png" 
+              alt="Logo" 
+              style="height: 80px; margin-right: 0px;" 
+            />
+            <a
+              href="/index"
+              aria-current="page"
+              class="logo-link-wrapper w-nav-brand w--current"
+              aria-label="home"
+            ><h1 class="text-400 bold">River Vision</h1></a>
+            <nav
+              class="header-nav-menu-wrapper w-nav-menu"
+              style="transform: translateY(0px) translateX(0px)"
+            >
+              <ul role="list" class="header-nav-menu-list w-list-unstyled">
+                <li class="header-nav-list-item">
+                  <a
+                    href="/index"
+                    aria-current="page"
+                    class="header-nav-link w-nav-link w--current"
+                    style="max-width: 1268px"
+                    >Trang Chủ</a
+                  >
+                </li>
+                <li class="header-nav-list-item">
+                  <a
+                    href="/intro"
+                    class="header-nav-link w-nav-link"
+                    style="max-width: 1268px"
+                    >Giới Thiệu</a
+                  >
+                </li>
+                <li class="header-nav-list-item">
+                  <a
+                    href="/tool"
+                    class="header-nav-link w-nav-link"
+                    style="max-width: 1268px"
+                    >Công Cụ</a
+                  >
+                </li>
+              </ul>
+              <div class="header-sidebar-wrapper">
+                <div class="sidebar-container">
+                  <div class="text-50 medium sidebar-title">Menu</div>
+                  <div class="grid-1-column sidebar-links-grid mg-bottom-48px">
+                    <a
+                      href="/index"
+                      aria-current="page"
+                      class="sidebar-link w-inline-block w--current"
+                    ><img
+                      src="../static/icon/645990a11b8dbb8a2114ab99_home-sidebar-link-icon-dashflow-webflow-template.png"
+                      loading="eager"
+                      alt="Home - Dashflow X Webflow Template"
+                      class="max-w-20px"
+                    />
+                    <div class="text-100 medium">Trang Chủ</div></a
+                    ><a href="/intro" class="sidebar-link w-inline-block"
+                    ><img
+                      src="../static/icon/645990a1fc639065b23f0dc9_changelog-sidebar-link-icon-dashflow-webflow-template.png"
+                      loading="eager"
+                      alt="Changelog - Dashflow X Webflow Template"
+                      class="max-w-20px"
+                    />
+                    <div class="text-100 medium">Giới Thiệu</div></a
+                    ><a href="/tool" class="sidebar-link w-inline-block"
+                    ><img
+                      src="../static/icon/645990a10f4b932ada158349_licenses-sidebar-link-icon-dashflow-webflow-template.png"
+                      loading="eager"
+                      alt="Licenses - Dashflow X Webflow Template"
+                      class="max-w-20px"
+                    />
+                    <div class="text-100 medium">Công Cụ</div></a
+                    >
+                  </div>
+                  <div class="text-50 medium sidebar-title">Giới Thiệu</div>
+                  <div class="grid-1-column sidebar-links-grid">
+                    <!-- Thêm các liên kết khác nếu cần -->
+                  </div>
+                </div>
+              </div>
+            </nav>
+            <div class="header-right-side-container">
+              <div class="hidden-on-mbl">
+                <div class="buttons-row gap-column-12px">
+                  <a href="/" class="btn-primary w-inline-block"
+                    ><div class="flex-horizontal gap-column-4px">
+                      <div id="logout-btn">Đăng Xuất</div>
+                    </div></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-nav-overlay"
+          data-wf-ignore=""
+          id="w-nav-overlay-0"
+          style="display: none"
+        ></div>
+      </div>
+      <div class="main-section pd-bottom-64px wf-section">
+        <div class="container-default w-container">
+          <div class="grid-2-columns main-dashboard-grid">
+            <div class="sticky-top hidden-on-tablet">
+              <div class="sidebar-container">
+                <div class="text-50 medium sidebar-title">Menu</div>
+                <div class="grid-1-column sidebar-links-grid mg-bottom-48px">
+                  <a
+                    href="/index"
+                    aria-current="page"
+                    class="sidebar-link w-inline-block w--current"
+                    ><img
+                      src="../static/icon/645990a11b8dbb8a2114ab99_home-sidebar-link-icon-dashflow-webflow-template.png"
+                      loading="eager"
+                      alt="Home - Dashflow X Webflow Template"
+                      class="max-w-20px"
+                    />
+                    <div class="text-100 medium">Trang Chủ</div></a
+                  ><a href="/intro" class="sidebar-link w-inline-block"
+                    ><img
+                      src="../static/icon/645990a1fc639065b23f0dc9_changelog-sidebar-link-icon-dashflow-webflow-template.png"
+                      loading="eager"
+                      alt="Changelog - Dashflow X Webflow Template"
+                      class="max-w-20px"
+                    />
+                    <div class="text-100 medium">Giới Thiệu</div></a
+                  ><a href="/tool" class="sidebar-link w-inline-block"
+                    ><img
+                      src="../static/icon/645990a10f4b932ada158349_licenses-sidebar-link-icon-dashflow-webflow-template.png"
+                      loading="eager"
+                      alt="Licenses - Dashflow X Webflow Template"
+                      class="max-w-20px"
+                    />
+                    <div class="text-100 medium">Công Cụ</div></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="dashboard-main-content">
+              <div style="opacity: 1" class="card image-right-inside">
+                <div class="inner-container _334px _100-mbl">
+                  <h1 class="text-600 bold mg-bottom-16px">RIVER VISION</h1>
+                  <p>
+                    Chào mừng bạn đến với River Vision - nền tảng đột phá trong
+                    việc dự đoán diện tích và lưu lượng nước sông hồ từ ảnh viễn
+                    thám. Với công nghệ tiên tiến và thuật toán thông minh,
+                    chúng tôi cung cấp một công cụ đáng tin cậy để bạn phân tích
+                    và quản lý tài nguyên nước một cách chuyên nghiệp.
+                  </p>
+                  <a href="/intro" class="btn-primary w-inline-block"
+                    ><div class="flex-horizontal gap-column-4px">
+                      <div>Thử ngay</div>
+                      <img
+                        src="../static/icon/646cdd3a1fe350c45874c7ce_primary-button-icon-right-dashflow-webflow-template.svg"
+                        loading="eager"
+                        alt=""
+                        class="link-icon arrow-right"
+                      /></div
+                  ></a>
+                </div>
+                <img
+                  src="../static/icon/z5415969889656_b72e4b676d83d6f2631f37e0513b5582.jpg.png"
+                  loading="eager"
+                  alt="River Vision header"
+                  class="card-image-right"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-neutral-100 wf-section">
+        <div class="container-default w-container">
+          <div class="grid-2-columns main-dashboard-grid">
+            <div id="w-node-bdf375e4-f372-ad95-cceb-78bd47bb7446-47bb7443">
+              <div class="footer-top-section">
+                <a
+                  href="/index"
+                  aria-current="page"
+                  class="logo-link-wrapper w-nav-brand w--current"
+                  aria-label="home"
+                  ><h1 class="text-400 bold">River Vision</h1></a
+                >
+                <div class="footer-links-container" style="opacity: 1">
+                  <a
+                    href="/index"
+                    aria-current="page"
+                    class="text-decoration-none w--current"
+                    >Trang Chủ</a
+                  ><a href="/intro" class="text-decoration-none">Giới Thiệu</a
+                  ><a href="/tool" class="text-decoration-none">Công Cụ</a>
+                </div>
+              </div>
+              <div class="footer-bottom-section">
+                <div style="opacity: 1">
+                  Copyright © River Vision | Designed by
+                  <a
+                    href="https://brixtemplates.com/"
+                    class="text-decoration-none text-bold"
+                    target="_blank"
+                    >AIRC</a
+                  >
+                  - Powered by
+                  <a
+                    href="https://brixtemplates.com/"
+                    class="text-decoration-none text-bold"
+                    target="_blank"
+                    >Viện CNTT</a
+                  >
+                </div>
+                <div class="social-links-container" style="opacity: 1">
+                  <a
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    class="social-circle-link"
+                    ></a
+                  ><a
+                    href="https://www.twitter.com/"
+                    target="_blank"
+                    class="social-circle-link"
+                    ></a
+                  ><a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    class="social-circle-link"
+                    ></a
+                  ><a
+                    href="https://www.youtube.com/"
+                    target="_blank"
+                    class="social-circle-link"
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="loading-bar-wrapper" style="display: none; opacity: 1">
+      <div class="loading-bar" style="width: 100vw"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../static/script.js"></script>
+  </body>
+</html>

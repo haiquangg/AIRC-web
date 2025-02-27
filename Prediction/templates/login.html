@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" type="text/css" href="../static/styles_login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Đăng nhập</h1>
+      <form id="login-form" action="/login" method="POST">
+        <div class="input-group">
+          <label for="username">Tên người dùng:</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="input-group">
+          <label for="password">Mật khẩu:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div class="input-group">
+          <button type="submit" class="btn">Đăng nhập</button>
+        </div>
+        {% if error %}
+        <p id="error-message" class="error-message">{{ error }}</p>
+        {% endif %}
+      </form>
+    </div>
+
+    <script src="../static/scripts_login.js"></script>
+  </body>
+</html>

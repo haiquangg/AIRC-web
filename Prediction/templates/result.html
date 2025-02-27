@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>River Vision - Kết Quả</title>
+    <link href="../static/styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/" rel="preconnect" />
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      WebFont.load({ google: { families: ["Inter:regular,500,700,800"] } });
+    </script>
+    <style>
+      /* Reset và định dạng cơ bản */
+      body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background: #f7f7f7;
+      }
+      /* Header */
+      .header-wrapper {
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+        padding: 10px 20px;
+      }
+      .header-content-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo-link-wrapper h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+      }
+      nav ul li {
+        margin-right: 15px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+      }
+      /* Main section */
+      .main-section {
+        max-width: 1200px;
+        margin: 20px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .left, .right {
+        flex: 1 1 45%;
+        box-sizing: border-box;
+        padding: 10px;
+      }
+      .left h3, .right h3 {
+        margin-top: 0;
+      }
+      /* Container ảnh gốc: hiển thị dạng grid */
+      #original-images-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      #original-images-container img {
+        width: calc(50% - 10px);
+        border: 1px solid #ddd;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+      /* Ảnh dự báo */
+      .predicted-image-container {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .predicted-image-container img {
+        max-width: 100%;
+        border: 1px solid #ddd;
+        padding: 5px;
+      }
+      /* Ảnh phân đoạn (nếu cần hiển thị) */
+      .segmented-image-container {
+        text-align: center;
+      }
+      #segmented-images-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+      #segmented-images-container img {
+        width: calc(50% - 10px);
+        border: 1px solid #ddd;
+        padding: 5px;
+      }
+      .info {
+        margin-top: 15px;
+        font-size: 16px;
+      }
+      /* Footer */
+      .footer-wrapper {
+        background: #fff;
+        border-top: 1px solid #ddd;
+        padding: 10px 20px;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header-wrapper">
+      <div class="header-content-wrapper">
+        <a href="/index" class="logo-link-wrapper">
+          <h1>River Vision</h1>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="/index">Trang Chủ</a></li>
+            <li><a href="/intro">Giới Thiệu</a></li>
+            <li><a href="/tool">Công Cụ</a></li>
+          </ul>
+        </nav>
+        <div class="header-right-side-container">
+          <a href="/" id="logout-btn">Đăng Xuất</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nội dung chính -->
+    <div class="main-section">
+      <h1>KẾT QUẢ</h1>
+      <div class="image-container">
+        <!-- Cột trái: hiển thị ảnh gốc -->
+        <div class="left">
+          <h3>Ảnh gốc</h3>
+          <div id="original-images-container">
+            <!-- Ảnh gốc sẽ được chèn vào đây -->
+          </div>
+        </div>
+        <!-- Cột phải: hiển thị ảnh dự báo (predict.png) và ảnh phân đoạn (nếu có) -->
+        <div class="right">
+          <h3>Ảnh dự báo</h3>
+          <div class="predicted-image-container">
+            <img id="predicted-image" src="" alt="Ảnh dự báo" />
+          </div>
+        </div>
+      </div>
+      <div class="info">
+        Diện tích hồ dự đoán qua ảnh: <span id="predicted-area"></span> m²
+      </div>
+      <div class="info">
+        Thời gian chạy: <span id="execution-time-value"></span> giây
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-wrapper">
+      <p>
+        Copyright © River Vision | Designed by 
+        <a href="https://brixtemplates.com/" target="_blank">AIRC</a> - Powered by 
+        <a href="https://brixtemplates.com/" target="_blank">Viện CNTT</a>
+      </p>
+    </div>
+
+    <script>
+      // Lấy dữ liệu từ sessionStorage (được backend lưu sau khi nhận kết quả)
+      const originalImages = JSON.parse(sessionStorage.getItem("original_images") || "[]");
+      // Dữ liệu ảnh phân đoạn, nếu có (mảng các tên file, ví dụ: ["seg_1.png", "seg_2.png", ...])
+      const segmentedImages = JSON.parse(sessionStorage.getItem("segmented_images") || "[]");
+      // Ảnh dự báo được backend trả về (ví dụ: "predict.png")
+      const predictedImageName = sessionStorage.getItem("predicted_image") || "";
+      const area = sessionStorage.getItem("area") || "Không có dữ liệu";
+      const execTime = sessionStorage.getItem("execution_time") || "Không có dữ liệu";
+
+      const originalImagesContainer = document.getElementById("original-images-container");
+      const predictedImage = document.getElementById("predicted-image");
+      const predictedArea = document.getElementById("predicted-area");
+      const executionTimeValue = document.getElementById("execution-time-value");
+      const segmentedImagesContainer = document.getElementById("segmented-images-container");
+
+      // Hiển thị ảnh gốc
+      if (originalImages.length > 0) {
+        originalImages.forEach(filename => {
+          const img = document.createElement("img");
+          img.src = `/uploads/${filename}`;
+          img.alt = "Ảnh gốc";
+          originalImagesContainer.appendChild(img);
+        });
+      } else {
+        originalImagesContainer.innerHTML = "<p>Không có ảnh gốc.</p>";
+      }
+
+      // Hiển thị ảnh dự báo
+      if (predictedImageName) {
+        predictedImage.src = `/results/${predictedImageName}`;
+      } else {
+        predictedImage.alt = "Không có ảnh dự báo";
+      }
+
+      // Hiển thị diện tích và thời gian
+      predictedArea.textContent = area;
+      executionTimeValue.textContent = execTime;
+    </script>
+  </body>
+</html>
