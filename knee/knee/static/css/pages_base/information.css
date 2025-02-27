@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title h1 {
+    color: #8d524a;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 0px;
+}
+
+h3 {
+    color: #333;
+    margin-top: 20px;
+}
+
+p, ul {
+    margin-bottom: 15px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.image-caption {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.intro, .severity, .treatment {
+    margin-bottom: 30px;
+}
+
+.intro p, .treatment ul {
+    margin-left: 20px;
+}

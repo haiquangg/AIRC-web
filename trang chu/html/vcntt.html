@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>River Vision</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="/trang chu/css/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="/trang chu/images/logo.jpg" alt="Logo AIRC" class="logo">
+            <span class="brand-name">River Vision</span>
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Giới Thiệu</a></li>
+                <li><a href="#">Đào tạo</a></li>
+                <li><a href="#">Công Nghệ</a></li>
+                <li><a href="#">Thư Viện</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    
+    <!-- Main container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="menu-title">MENU</div>
+            
+            <ul class="menu-items">
+                
+                <li class="menu-item">
+                    <a href="/knee/knee/templates/pages_base/index.html" target="_blank">
+                        <span>Trang 1</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/Prediction/Prediction/templates/index.html" target="_blank">
+                        <span>Trang 2</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/Summarization/templates/index.html" target="_blank">
+                        <span>Trang 3</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <span>Trang 4</span>
+                </li>
+            </ul>
+        </aside>
+        
+        <!-- Main content -->
+        <main class="main-content">
+            <div class="slider">
+                <img class="slider-img" src="/trang chu/images/slick2.jpg" alt="">
+                <img class="slider-img" src="/trang chu/images/slick3.jpg" alt="">
+                <img class="slider-img" src="/trang chu/images/slick4.jpg" alt="">
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h2 class="institute-name">VIỆN CÔNG NGHỆ THÔNG TIN - ĐHQGHN</h2>
+                <p class="address"><strong>Địa chỉ:</strong> E3, 144 Xuân Thủy, Cầu Giấy, Hà Nội</p>
+                <p class="phone"><strong>Số điện thoại:</strong> (024) 3754 7347</p>
+                <p class="email"><strong>Email:</strong> <a href="mailto:iti@vnu.edu.vn">iti@vnu.edu.vn</a></p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Tài nguyên số</a></li>
+                    <li><a href="#">Thư viện</a></li>
+                    <li><a href="#">Tiện ích dành riêng cán bộ</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            dots: true,
+            arrows: true,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            fade: true,
+            speed: 1000,
+            pauseOnHover: false
+        });
+    });
+</script>
+</body>
+</html>

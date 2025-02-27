@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIRC-KNEE</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cropperjs/dist/cropper.min.css">
+    <link rel="stylesheet" href="/knee/knee/static/css/pages_ai/knee_detection.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Chẩn đoán hình ảnh thoái hóa khớp gối</h1>
+        <!-- Phần trên -->
+        <div class="top-section">
+            <div class="upload-section">
+                <h3>Chọn vùng khớp gối</h3>
+                <input type="file" id="uploadImage" accept="image/*" hidden>
+                <div class="cropper-container">
+                    <img id="uploadedImage" src="/knee/knee/static/images/icon.png" alt="Upload Icon">
+                </div>
+                <label for="uploadImage">Tải ảnh lên</label>
+
+            </div>
+            <div class="crop-preview">
+                <h3>Vùng khớp gối cần chẩn đoán</h3>
+                <img id="croppedPreview" src="/knee/knee/static/images/icon.png">
+                <button id="diagnoseButton" disabled>Chẩn đoán</button>
+            </div>
+        </div>
+
+        <div class="bottom-section" id="bottomSection" style="display: none;">
+            <div class="image-results">
+                <div>
+                    <h4>Vùng khớp gối ban đầu</h4>
+                    <img id="originalCroppedImage" src="#" style="cursor: pointer;" onclick="showPopup(this)" alt="loading...">
+                </div>
+                <div>
+                    <h4>Dự đoán vùng thoái hóa</h4>
+                    <img id="diagnosedImage" src="#" style="cursor: pointer;" onclick="showPopup(this)" alt="loading...">
+                </div>
+            
+                <div id="popup" class="popup" onclick="closePopup(event)">
+                    <span class="popup-close">&times;</span>
+                    <img id="popupImage" src="#" alt="Dự đoán vùng thoái hóa">
+                </div>
+            </div>            
+
+            <div class="diagnosis-results">
+                <h3>Lời khuyên từ chuyên gia</h3>
+                <p id="diagnosisText">Chi tiết kết quả sẽ hiển thị ở đây...</p>
+                <p id="diagnosisText1"></p>
+                <p id="diagnosisText2"></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/cropperjs/dist/cropper.min.js"></script>
+    <script src="/knee/knee/static/js/knee_detection.js"></script>
+</body>
+</html>

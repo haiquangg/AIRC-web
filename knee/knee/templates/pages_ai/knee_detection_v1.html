@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIRC-KNEE</title>
+    <script src="https://cdn.jsdelivr.net/npm/cropperjs/dist/cropper.min.js"></script>
+    <script src="/knee/knee/static/js/knee_detection.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Chẩn đoán hình ảnh thoái hóa khớp gối</h1>
+        <!-- Phần trên -->
+        <div class="top-section">
+            <div class="upload-section">
+                <h3>Chọn vùng khớp gối</h3>
+                <input type="file" id="uploadImage" accept="image/*">
+                <div class="cropper-container">
+                    <img id="uploadedImage" src="#" alt="Your Image" hidden>
+                </div>
+                <label for="uploadImage">Tải ảnh lên</label>
+            </div>
+            <div class="crop-preview">
+                <h3>Vùng khớp gối cần chẩn đoán</h3>
+                <img id="croppedPreview" src="#" hidden>
+                <button id="diagnoseButton" disabled>Chẩn đoán</button>
+            </div>
+        </div>
+
+        <div class="bottom-section" id="bottomSection" style="display: none;">
+            <div class="image-results">
+                <div>
+                    <h4>Vùng khớp gối ban đầu</h4>
+                    <img id="originalCroppedImage" src="#" alt="Original Cropped Image" hidden>
+                </div>
+                <div>
+                    <h4>Dự đoán vùng thoái hóa</h4>
+                    <img id="diagnosedImage" src="#" alt="Diagnosed Image" hidden>
+                </div>
+            </div>
+            <div class="diagnosis-results">
+                <h3>Lời khuyên từ chuyên gia</h3>
+                <p id="diagnosisText">Chi tiết kết quả sẽ hiển thị ở đây...</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/cropperjs/dist/cropper.min.js"></script>
+    <script src="/knee/knee/static/js/knee_detection.js"></script>
+</body>
+</html>
