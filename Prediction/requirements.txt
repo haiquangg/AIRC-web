@@ -1,7 +1,0 @@
-Flask==3.0.3
-numpy==1.23.1
-opencv_python==4.8.0.76
-Shapely==2.0.4
-torch==2.3.0
-ultralytics==8.2.6
-keras==3.2.1
